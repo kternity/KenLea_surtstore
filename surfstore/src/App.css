@@ -1,5 +1,15 @@
+html, body, #root {
+  height: 100%;
+  background-color: lightpink;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  align-content:space-between;
+  flex-direction: column;
+  height: 100%;
+  
 }
 
 .App-logo {
@@ -35,4 +45,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.page-content {
+  min-height: calc(100vh - 120px);
 }

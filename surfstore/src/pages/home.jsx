@@ -7,7 +7,7 @@ function Home() {
    <div className="home">
       <h1>Welcome to Ken & Lea's Surfboard Store</h1>
       <h4>Your perfect surfboards 1 l click away!</h4>
-      
+      {/* <img src="/images/cover.jpg" alt=""></img> */}
       <Link className='btn btn-primary' to="/catalog">Check our amazing surfboards</Link>
    </div>
    );

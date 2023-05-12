@@ -1,7 +1,9 @@
 .home {
    background-color: blanchedalmond;
+   height: 100%;
+   margin-bottom:0;
 }
 
-.home {
+/* .home {
    text-align: center;
-}
+} */        

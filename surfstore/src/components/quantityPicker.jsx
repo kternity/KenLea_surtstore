@@ -4,19 +4,19 @@ import {useState} from 'react';
 function QuantityPicker(prods) {
    let [quantity, setQuantity] = useState(1);
 
-   function decrease() {
-      if (quantity === 1) return; 
-
-      let val = quantity - 1;
-      setQuantity(val);
-      prods.onChange(val); //notify the parentt
-   }
-
    function increase() {
       let val = quantity +1;
       setQuantity(val);
       prods.onChange(val); //notify the parent
    }
+
+   function decrease() {
+      if (quantity === 1) return; 
+      let val = quantity - 1;
+      setQuantity(val);
+      prods.onChange(val); //notify the parentt
+   }
+
 
    
    return ( 

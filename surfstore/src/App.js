@@ -16,6 +16,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
+
 function App() {
   return (
     <GlobalData>
@@ -44,9 +45,6 @@ function App() {
 }
 
 export default App;
-
-
-// Comments testing
 
 
 

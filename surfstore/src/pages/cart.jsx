@@ -11,17 +11,15 @@ function Cart() {
          <h4>You have {cart.length} products in the cart</h4>
          {cart.map((prod)=>(
             <div className="prod-row">
-            <img src={'/images/'+ prod.image} alt=""></img>
-            <h6>{prod.title}</h6>
-            <label>{prod.price}</label>
-            <button className='btn btn-sm btn-danger'>Remove</button>
+               <img src={'/images/'+ prod.image} alt=""></img>
+               <h6>{prod.title}</h6>
+               <label>{prod.price}</label>
+               <button className='btn btn-sm btn-danger'>Remove</button>
             </div>
          ))}
-         <div>
-
-
-         </div>
-         <Link className='btn btn-primary' to="/catalog">Check our amazing surfboards</Link>
+      <div>
+      <Link className='btn btn-primary' to="/catalog">Check Out</Link>
+      </div>
       </div>
    );
 }
