@@ -1,5 +1,12 @@
 
 .navbar {
-  background-color:rgb(166, 246, 246);
+  background-color:rgba(248, 209, 80, 0.909);
 }
 
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-item {
+  font-weight: bold;
+}

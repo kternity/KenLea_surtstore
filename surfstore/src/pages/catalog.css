@@ -1,7 +1,12 @@
 .catalog {
-   background-color:rgba(216, 250, 239, 0.676);
+   background-color: rgb(228, 248, 255);
 }
 
 .catalog .btn-filter{
    margin: 5px;
+}
+
+h3 {
+   padding-top: 30px;
+   padding-bottom: 20px;
 }

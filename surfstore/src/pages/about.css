@@ -1,8 +1,26 @@
 
 .about {
-   background-color:aquamarine;
-   text-align: center;
-   height: 100%;
+   background-color: rgb(228, 248, 255);
+   align-items: center;
+}
+
+.picture {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 600px;
+   padding:30px;
+}
+
+.about_picture {
+   width: 600px;
+   padding-bottom: 20px;
+}
+
+h2 {
+   padding-top: 20px;
+   padding-bottom: 10px;
 }
 
 .about button {
@@ -10,7 +28,8 @@
    margin-bottom: 30px;
 }
 
+
 .about h6 {
-   color: rgb(236, 140, 123);
+   color: rgb(50, 101, 212);
 }
 

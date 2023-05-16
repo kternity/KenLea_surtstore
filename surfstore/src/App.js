@@ -27,12 +27,10 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home />}></Route>
           <Route path="/home" element={ <Home />}></Route>
-
           <Route path="/catalog" element={ <Catalog />}></Route>
           <Route path="/admin" element={ <Admin />}></Route>
           <Route path="/about" element={ <About />}></Route>
           <Route path="/cart" element={ <Cart />}></Route>
-          
           <Route path="*" element={ <NotFound />}> </Route>
         </Routes>
         

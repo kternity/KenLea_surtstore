@@ -1,9 +1,26 @@
 .home {
-   background-color: blanchedalmond;
+   background-color: rgb(228, 248, 255);
    height: 100%;
    margin-bottom:0;
 }
 
-/* .home {
-   text-align: center;
-} */        
+h1 {
+   padding-top: 30px;
+   padding-bottom: 15px;
+}
+
+.home_picture1 {
+   width: 100%;
+   border-radius: 5px;
+   padding-bottom: 30px;
+}
+
+.container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+/* .container {
+   padding: 30px;
+} */
