@@ -1,15 +1,33 @@
 import './login.css';
 import React, { useState } from "react";
+import DataService from '../services/dataservice';
 
 const Login = (props) => {
    const [email, setEmail] = useState('');
-   const [pass, setPass] = useState(''); 
+   const [pass, setPass] = useState('');
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       console.log(email);
       console.log(pass);
+      let user = { "email": email, "password": pass }
+
+
+      // build an object that contains email and password
+      let service = new DataService();
+      // create a instansce (and import) data saervice
+      let result = await service.auth(user)
+      // call the saveUser method
+      console.log(result);
+      if (result.status == "success") {
+         alert("Login successful!");
+      }
+      else {
+         alert("Login unsuccessful!");
+      }
+
    }
+
 
    return (
       <div className="auth-form-container">
@@ -23,7 +41,7 @@ const Login = (props) => {
          </form>
          <label>Log in</label>
          <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
-      </div>   
+      </div>
    )
 }
 

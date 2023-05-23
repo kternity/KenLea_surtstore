@@ -1,0 +1,15 @@
+
+.orders {
+   background-color: rgb(228, 248, 255);
+   align-items: center;
+}
+
+
+.bullets {
+   text-align: center;
+ }
+ .bullets > ul {
+   display:grid; padding-left: 0;
+   list-style-position: inside;
+
+ }

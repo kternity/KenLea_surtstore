@@ -87,8 +87,32 @@ const catalog = [
 ];
 
 class DataService {
+
+      SERVERURL = "http://127.0.0.1:5000";
+
    async getCatalog() {
-      let response = await axios.get("http://127.0.0.1:5000/api/catalog");
+      let response = await axios.get(this.SERVERURL + "/api/catalog");
+      return response.data;
+   }
+
+   async saveCart(order) {
+      let response  = await axios.post(this.SERVERURL + "/api/cart", order);
+      return response.data;
+   }
+
+   async getOrders() {
+      let response  = await axios.get(this.SERVERURL + "/api/cart");
+      return response.data;
+   }
+
+   
+   async saveUser(user) {
+      let response  = await axios.post(this.SERVERURL + "/api/user", user);
+      return response.data;
+   }
+
+   async auth(user) {
+      let response = await axios.post(this.SERVERURL + "/api/auth", user);
       return response.data;
    }
 }

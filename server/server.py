@@ -17,6 +17,14 @@ def home():
 def about():
     return "About Kenneth Chung"
 
+@app.get("/user")
+def user():
+    return "User"
+
+
+@app.get("/orders")
+def orders():
+    return "Orders"
 
 
 # CATALOG API 
@@ -116,8 +124,87 @@ def get_numbers():
 
    return json.dumps(result)
 
+
+
+# create endpoint for UserAccounts
+# get all users
+
+
+@app.get("/api/user")
+def get_user():
+    cursor = db.user.find({})
+    results = []
+    for user in cursor:
+        user["_id"] = str(user["_id"]) 
+        results.append(user)
+
+    return json.dumps(results)
+
+# save user
+@app.post("/api/user")
+def save_user():
+    user = request.get_json()
+    db.user.insert_one(user)
+    user["_id"] = str(user["_id"]) # clean the objectID from the obj
+    return json.dumps(user)
+
+
+# validate login
+@app.post("/api/auth")
+def auth():
+    # data should have
+    # email and password
+    data = request.get_json()
+    email = data["email"]
+    password = data["password"]
+
+    user = db.user.find_one({"email":email, "password": password})
+    if user is None:
+        return ({"status":"failed", "message": "Invalid credentials"})
+
+    user["_id"] = str(user["_id"]) # clean the objectID from the obj
+    return ({"status":"success", "message": "Valid credentials", "user": json.dumps(user)})    
+
+
+# FE - axios should send a POST rquest with the user object
+
+
+
+
+
+# Save Cart to server #
+@app.get("/api/cart")
+def get_cart():
+    cursor = db.cart.find({})
+    results = []
+    for cart in cursor:
+        cart["_id"] = str(cart["_id"]) 
+        results.append(cart)
+
+    return json.dumps(results)
+
+# save cart
+@app.post("/api/cart")
+def save_cart():
+    cart = request.get_json()
+    db.cart.insert_one(cart)
+    cart["_id"] = str(cart["_id"]) 
+    return json.dumps(cart)
+
+
+
+# Display all Results
+@app.get("/api/cart")
+def get_order():
+    cursor = db.cart.find({})
+    results = []
+    for order in cursor:
+        order["_id"] = str(order["_id"])
+        results.append(order)
+
+    return json.dumps(results)
+
+
+
+
 app.run(debug=True)
-
-
-
-# comment change 
